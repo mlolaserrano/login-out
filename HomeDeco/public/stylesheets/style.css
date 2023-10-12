@@ -1,0 +1,162 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-nav .nav-link:hover {
+  color: #727fe4;
+}
+
+.nav-item a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-item a:hover {
+  color: #006691;
+  transform: scale(1.1);
+}
+
+.nav-item.contact-btn a {
+  color: #fff;
+  background-color: #006691;
+  padding: 8px 20px;
+  border-radius: 15px;
+}
+
+.nav-item.contact-btn a:hover {
+  background-color: #2499c7;
+}
+
+.nav-item a i {
+  margin-left: 5px;
+}
+
+
+
+h1 {
+  color: pink;
+  text-align: center;
+}
+
+h2 {
+  color: rgb(29, 138, 101);
+  margin: 5px;
+}
+
+.nav-item a:hover {
+  color: #006691;
+  transform: scale(1.1);
+}
+
+.btn-primary {
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.1);
+}
+
+a.boton {
+  color: white;
+  text-decoration: none;
+}
+
+
+.container {
+  margin-bottom: 1rem;
+}
+
+
+.mockup {
+  text-align: center;
+}
+
+/* Estilo para input */
+input {
+  width: 100%;
+  max-width: 284px;
+  border-radius: 5px;
+  background-color: #f5e1ce;
+  border: 1px solid #495e8d;
+  color: black;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* Nota: acordarme Agregar para centrar elementos horizontal y verticalmente en .mockup */
+.usuario {
+  padding: 10px;
+}
+
+.log3 {
+  color: #050505;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 30px;
+  margin: 10px auto;
+  display: block;
+  width: 100%;
+  background-color: #a9a27c;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.log3:hover {
+  background-color: #c8884c;
+}
+
+.admin{
+  background-color: #cce5ff;
+  border-radius: 25px;
+  text-align: left;
+  border-radius: 10px; 
+  padding: 10px; 
+  width: 50%; 
+  max-width: 300px; 
+  margin: 0 auto;
+}
+
+.btn{
+  
+  background-color: #A2C8CC;
+  border-color: #789ca0;
+  color: black;
+  
+}
+.btn:hover{
+  color:black;
+  background-color: #b9b99e;
+  border-color: #b9b99e;
+}
+
+.error {
+  text-align: center;
+  color: red;
+  animation: titilar 1.5s ease;
+}
+
+@keyframes titilar {
+  0%, 100% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 5px #FF0000;
+  }
+}
+
+.cajita{
+  background-color: #43b8dc;
+  text-align: center;
+  padding: 25px;
+}
+.rep{
+  color: #00276c;
+}

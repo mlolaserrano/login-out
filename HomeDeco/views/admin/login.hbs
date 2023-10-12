@@ -1,0 +1,22 @@
+<form class="admin" action="/admin/login" method="post">
+  <div class="mb-3">
+    <label for="usuario" class="form-label">Usuario</label>
+    <input type="text" class="form-control" id="usuario" aria-describedby="emailHelp" name="usuario" placeholder="Ingresá tu Usuario">
+     </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Clave</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="clave" placeholder="Ingresá tu Contraseña">
+  </div>
+  <div >
+  <button type="submit" class="btn btn-primary" >Ingresar</button>
+  {{#if error}}
+<p class="error">Datos Incorrectos</p>
+{{/if}}
+  </div>
+</form>
+
+
+
+<br>
+<br>
+
