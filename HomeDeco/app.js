@@ -3,7 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const session = require('express-session'); 
+const session = require('express-session');
+var fileUpload = require('express-fileupload');
 
 require('dotenv').config();
 
@@ -35,17 +36,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //select
 //pool.query("select * from empleados").then(function(resultados){
- // console.log(resultados);
+// console.log(resultados);
 //});
 
 //insert
 //var objInsert = { 
 //  nombre: 'Juan',
- // apellido: 'Lopez',
- // trabajo: 'Docente',
+// apellido: 'Lopez',
+// trabajo: 'Docente',
 //  edad: 38,
- // salario: 190000,
- // mail: 'juanlopez@gmail.com'
+// salario: 190000,
+// mail: 'juanlopez@gmail.com'
 //}
 
 //pool.query("insert into empleados set ?", [objInsert]).then(function(resultados) {
@@ -83,15 +84,20 @@ app.use(session({
 secured = async (req, res, next) => {
   try {
     console.log(req.session.id_usuario);
-    if(req.session.id_usuario) {
+    if (req.session.id_usuario) {
       next();
-    } else { 
+    } else {
       res.redirect('/admin/login')
     }
-    } catch (error) { 
-      console.log(error);
-    }
-    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}));
 
 
 app.use('/', indexRouter);
@@ -105,18 +111,18 @@ app.use('/admin/novedades', secured, novedadesRouter);
 app.use('/outdoor', outdoorRouter);
 
 
-app.use((req, res, next) => { 
-  res.locals.user = req.session.user; 
+app.use((req, res, next) => {
+  res.locals.user = req.session.user;
   next();
 });
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

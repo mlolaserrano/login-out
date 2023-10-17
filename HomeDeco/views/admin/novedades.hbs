@@ -1,8 +1,28 @@
 <div class="cajita">
-
-<h1 class="rep">¡Hola {{usuario}}!</h1>
-<h2 class="rep">¡Estamos remodelando la página!</h2>
-<h3>Te esperamos pronto para que seas parte de nuestro InteriorDesign World ♥</h3>
-<img src="https://media.tenor.com/KC5HIotG-bgAAAAd/cute-robot.gif" alt="Construyendo Web">
-
+     <h1 class="rep">¡Hola {{usuario}}!</h1>
+     <p class="rep">Estas son las últimas tendencias en Diseño de Interiores:</p>
 </div>
+
+<br>
+<br>
+<div class="nuev">
+     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+         <a href="/admin/novedades/agregar"> <button class="btn btn-primary" type="button">Agregar</button></a>
+     </div>
+</div>
+
+<ol class="list-group list-group-numbered">
+     {{#each novedades}}
+     <li class="list-group-item">
+          <img src="{{{imagen}}}" alt="{{titulo}}" width="100"> <br>
+          <h2 class="tabla">{{titulo}}</h2> <br>
+          <br>
+          <p class="tabla">{{cuerpo}}</p> <br>
+          <div class="botones-container">
+             <a href="/admin/novedades/editar/{{id}}" > <button class="editar" type="button">Editar</button></a>
+             <a href="/admin/novedades/eliminar/{{id}}" ><button class="cruz" type="button"><img src="/images/bin.svg" alt="eliminar" height="25"></button></a>
+          </div>
+     </li>
+     {{/each}}
+</ol>
+

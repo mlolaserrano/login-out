@@ -9,7 +9,7 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('chat', { title: 'Express' });
 });
 

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var usuarioModels = require('./../../modelo/usuarioModels.js');
 
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('admin/login', {
     layout: '/admin/layout.hbs'
   });
@@ -10,10 +10,10 @@ router.get('/', function(req, res, next) {
 
 router.get('/logout', function (req, res, next) {
   req.session.destroy();
-    res.render('admin/login', {
-      layout: 'admin/layout'
-    });
-    });
+  res.render('admin/login', {
+    layout: 'admin/layout'
+  });
+});
 
 
 router.post('/', async (req, res, next) => {
@@ -28,10 +28,10 @@ router.post('/', async (req, res, next) => {
     if (data !== undefined) {
       req.session.id_usuario = data.id;
       req.session.nombre = data.usuario;
-      
+
       res.redirect('/admin/novedades');
     } else {
-      res.render('admin/login', { 
+      res.render('admin/login', {
         layout: 'admin/layout',
         error: true
       });
